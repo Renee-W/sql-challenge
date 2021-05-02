@@ -1,3 +1,7 @@
+-- review the data
+SELECT COUNT (*) as count, emp_no from dept_emp
+group by emp_no having count (*)>1
+
 --List the following details of each employee: employee number, last name, first name, sex, and salary.
 
 Select 
@@ -66,3 +70,4 @@ WHERE d.dept_name IN ('Sales', 'Development');
 SELECT COUNT (last_name) as count, last_name
 from employees
 GROUP BY last_name
+ORDER BY last_name DESC
