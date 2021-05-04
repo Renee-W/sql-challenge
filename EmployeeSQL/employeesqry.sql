@@ -1,4 +1,6 @@
 -- review the data
+SELECT COUNT (*) as count from employees;
+
 SELECT COUNT (*) as count, emp_no from dept_emp
 group by emp_no having count (*)>1
 
@@ -14,13 +16,13 @@ FROM employees e
 JOIN salaries s ON e.emp_no = s.emp_no;
 
 -- List first name, last name, and hire date for employees who were hired in 1986.
-
 SELECT
 e.first_name,
 e.last_name,
 e.hire_date
 FROM employees e
-where hire_date <'1/1/1987';
+where hire_date <'1/1/1987'
+AND hire_date >'12/31/1985';
 
 -- List the manager of each department with the following information: department number, 
 -- department name, the manager's employee number, last name, first name.
